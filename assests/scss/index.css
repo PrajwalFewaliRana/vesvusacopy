@@ -15,6 +15,10 @@ body {
   background-color: #2f3131;
 }
 
+button {
+  cursor: pointer;
+}
+
 header {
   background-color: #2f3131;
 }
@@ -302,7 +306,8 @@ header .logo-section .user .dark-mode .half-moon {
 }
 .home-page .collection {
   position: relative;
-  margin-top: 110px;
+  margin: 110px 0;
+  margin-left: 30px;
 }
 .home-page .collection h3 {
   position: absolute;
@@ -314,7 +319,7 @@ header .logo-section .user .dark-mode .half-moon {
 }
 .home-page .collection .collection-img {
   display: flex;
-  gap: 73px;
+  gap: 60px;
   justify-content: center;
   position: absolute;
   left: 120px;
@@ -322,21 +327,51 @@ header .logo-section .user .dark-mode .half-moon {
 .home-page .collection .collection-img .box {
   height: 190px;
   width: 220px;
-}
-.home-page .collection .collection-img .box:nth-child(even) {
-  background-color: black;
-  width: 160px;
+  position: relative;
+  overflow: hidden;
 }
 .home-page .collection .collection-img .box img {
   height: 100%;
   width: 100%;
+  transition: all 1s ease;
+}
+.home-page .collection .collection-img .box:hover img {
+  transform: scale(1.1);
+}
+.home-page .collection .collection-img .box:nth-child(even) {
+  width: 160px;
+  background-color: #000000;
+}
+.home-page .collection .collection-img .box:nth-child(even)::before {
+  content: "COLLECTIONS";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  font-size: 20px;
+  color: white;
+  z-index: 9;
+  text-align: center;
+  line-height: 190px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.home-page .collection .collection-img .box:nth-child(odd)::before {
+  content: "KIDS";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  font-size: 20px;
+  color: white;
+  z-index: 9;
+  text-align: center;
+  line-height: 190px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .home-page .collection button {
   position: absolute;
   border: 2px solid #a1a2a2;
   background-color: transparent;
   top: 70px;
-  right: 90px;
+  right: 107px;
   padding: 15px 25px;
   transform: rotate(-90deg);
   transition: all 1s ease;
@@ -360,6 +395,62 @@ header .logo-section .user .dark-mode .half-moon {
   color: #2f3131;
   height: 58px;
   width: 200px;
+}
+.home-page .featured-categories {
+  margin-top: 410px;
+  margin-left: 100px;
+  margin-right: 120px;
+}
+.home-page .featured-categories .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.home-page .featured-categories .top h3 {
+  font-size: 28px;
+  font-weight: 500;
+  color: white;
+}
+.home-page .featured-categories .top button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  height: 40px;
+  width: 40px;
+  color: white;
+}
+.home-page .featured-categories .top button i {
+  font-size: 16px;
+}
+.home-page .featured-categories .top button:hover {
+  background-color: white;
+  color: #2f3131;
+}
+.home-page .featured-categories .product-collection {
+  display: flex;
+  height: 356px;
+  width: 60vw;
+  gap: 20px;
+}
+.home-page .featured-categories .product-collection img {
+  height: 100%;
+  width: 267px;
+}
+.home-page .featured-categories .titles {
+  display: flex;
+  gap: 170px;
+}
+.home-page .featured-categories .titles h4 {
+  font-size: 20px;
+  color: white;
+  font-weight: 400;
+}
+.home-page .featured-categories .titles h4:nth-child(3) {
+  margin-left: 60px;
+}
+.home-page .featured-categories .titles h4:last-child {
+  margin-left: 61px;
 }
 
 @-webkit-keyframes slide {

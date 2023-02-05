@@ -15,6 +15,9 @@ body {
   overflow-x: hidden;
   background-color: $color1;
 }
+button {
+  cursor: pointer;
+}
 header {
   background-color: $color1;
 
@@ -298,7 +301,7 @@ header {
         color: white;
         border: 1px solid white;
         background-color: transparent;
-        transition:all 2s ease;
+        transition: all 2s ease;
 
         &::before {
           content: "EXPLORE COLLECTIONS";
@@ -320,48 +323,84 @@ header {
       }
     }
   }
-  .collection{
+  .collection {
     position: relative;
-    margin-top: 110px;
+    margin: 110px 0;
+    margin-left: 30px;
 
-    h3{
+    h3 {
       position: absolute;
       font-size: 28px;
       font-weight: 500;
       color: white;
       top: -60px;
-      right:200px ;
+      right: 200px;
     }
-    .collection-img{
+    .collection-img {
       display: flex;
-      gap: 73px;
+      gap: 60px;
       justify-content: center;
       position: absolute;
       left: 120px;
-      .box{
+      .box {
         height: 190px;
         width: 220px;
-        &:nth-child(even){
-          background-color: black;
-          width: 160px;
-        }
-        img{
+        position: relative;
+        overflow: hidden;
+        img {
           height: 100%;
           width: 100%;
+          transition: all 1s ease;
+        }
+        &:hover {
+          img {
+            transform: scale(1.1);
+          }
+        }
+
+        &:nth-child(even) {
+          &::before {
+            content: "COLLECTIONS";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            font-size: 20px;
+            color: white;
+            z-index: 9;
+            text-align: center;
+            line-height: 190px;
+            background-color: rgba($color: #000, $alpha: 0.5);
+          }
+          width: 160px;
+          background-color: #000000;
+        }
+        &:nth-child(odd) {
+          &::before {
+            content: "KIDS";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            font-size: 20px;
+            color: white;
+            z-index: 9;
+            text-align: center;
+            line-height: 190px;
+            background-color: rgba($color: #000000, $alpha: 0.5);
+          }
         }
       }
-
     }
-    button{
+    button {
       position: absolute;
       border: 2px solid $color2;
       background-color: transparent;
       top: 70px;
-      right: 90px;
+      right: 107px;
       padding: 15px 25px;
       transform: rotate(-90deg);
+
       transition: all 1s ease;
-      &:before{
+      &:before {
         content: "NEXT";
         font-size: 20px;
         font-weight: 400;
@@ -369,11 +408,10 @@ header {
         background-color: transparent;
         height: 58px;
         width: 140px;
-        
       }
-      &:hover{
+      &:hover {
         background-color: white;
-        &::before{
+        &::before {
           content: "SEE NEXT";
           font-size: 20px;
           font-weight: 400;
@@ -384,50 +422,65 @@ header {
       }
     }
   }
+  .featured-categories {
+     margin-top: 410px;
+     margin-left: 100px;
+     margin-right: 120px;
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      h3{
+        font-size: 28px;
+        font-weight: 500;
+        color: white;
+      }
+      button{
+        border: none;
+        outline: none;
+        background-color: transparent;
+        height: 40px;
+        width: 40px;
+        color: white;
+        i{
+          font-size: 16px;
+        }
+        &:hover{
+          background-color: white;
+          color: $color1;
+        }
+      }
+    }
+    .product-collection {
+      display: flex;
+      height: 356px;
+      width: 60vw;
+
+      gap: 20px;
+      img {
+        height: 100%;
+        width: 267px;
+      }
+    }
+    .titles{
+      display: flex;
+      gap: 170px;
+      h4{
+        font-size: 20px;
+        color: white;
+        font-weight: 400;
+        &:nth-child(3){
+          margin-left: 60px;
+        }
+        &:last-child{
+          margin-left: 61px;
+        }
+      }
+    }
+  }
 }
 @keyframes slide {
-  // 0% {
-  //   transform: translateX(0);
-  // }
-  // 10% {
-  //   transform: translateX(0);
-  // }
-  // 15% {
-  //   transform: translateX(-98%);
-  // }
-  // 25% {
-  //   transform: translateX(-98%);
-  // }
-  // 30% {
-  //   transform: translateX(-185%);
-  // }
-  // 40% {
-  //   transform: translateX(-185%);
-  // }
-  // 45% {
-  //   transform: translateX(-283%);
-  // }
-  // 55% {
-  //   transform: translateX(-283%);
-  // }
-  // 60% {
-  //   transform: translateX(-358%);
-  // }
-  // 70% {
-  //   transform: translateX(-358%);
-  // }
-  // 75% {
-  //   transform: translateX(-425%);
-  // }
-  // 85% {
-  //   transform: translateX(-425%);
-  // }
-  // 90% {
-  //   transform: translateX(-495%);
-  // }
-  // 100% {
-  //   transform: translateX(-495%);
-  // }
   0% {
     transform: translateX(0);
   }
